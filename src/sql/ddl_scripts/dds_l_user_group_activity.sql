@@ -7,6 +7,6 @@ load_dt datetime,
 load_src varchar(20)
 )
 order by load_dt
-SEGMENTED BY hk_l_user_group_activity all nodes
+SEGMENTED BY hk_user_id all nodes
 PARTITION BY load_dt::date
 GROUP BY calendar_hierarchy_day(load_dt::date, 3, 2); 
